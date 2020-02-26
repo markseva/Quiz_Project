@@ -1,7 +1,8 @@
 let score = 0;
 let count = 0;
-let numQuest = document.getElementById("questNum"); numQuest.innerText = 4;
-let num = document.getElementById("progress"); num.innerText = 0;
+let numQuest = 4;
+
+
 
 
 
@@ -47,27 +48,33 @@ let DoTheeThings = function(){
     btn3.onclick = function () {checkCorrect(this)};
 
     if(count === 0){
-        createQuestion("huh", "who", "when", "die", "help", "when");
-
-
+        createQuestion("What is my name", "Evan", "Mark", "Eve", "Winter", "Evan");
     }else if(count === 1){
-        createQuestion("a", "a", "ap", "a", "a", "ap");
-    }else if(count === 2){
-        createQuestion("al", "al", "apl", "al", "al", "apl");
-    }else if(count === 3){
-    createQuestion("al", "al", "apl", "al", "al", "apl");
-}
+        createQuestion("How old am I?", "16", "17", "18", "15", "18");
+    }else if(count === 2 ){
+        createQuestion("What day was this finished?", "Monday", "Tuesday", "Friday", "Sunday", "Tuesday");
+    }else if(count === 3 ){
+    createQuestion("Did I do good?", "YES", "YES", "YES", "NO", "YES");
+    }else{
 
+        let countPE = document.getElementById("ending");
+        countPE.innerText = "You got " + score + " correct out of " + numQuest;
 
+        document.getElementById("question").innerHTML = " ";
+        document.getElementById("btn0").innerHTML = " ";
+        document.getElementById("btn1").innerHTML = " ";
+        document.getElementById("btn2").innerHTML = " ";
+        document.getElementById("btn3").innerHTML = " ";
+        document.getElementById("progress").innerText = " ";
+    }
+    document.getElementById("progress").innerText = "Question " + (score + 0) + " of " + numQuest;
 
     };
 
 
 let checkCorrect = function (button) {
-    if(button.innerText === right){
+    if(button.innerText === right) {
         score++;
-        num++;
-        alert("aaaaaaaaaaaaaaaaaa");
     }
     count++;
     DoTheeThings();
