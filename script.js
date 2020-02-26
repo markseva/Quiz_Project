@@ -67,7 +67,11 @@ let DoTheeThings = function(){
         document.getElementById("btn3").innerHTML = " ";
         document.getElementById("progress").innerText = " ";
     }
-    document.getElementById("progress").innerText = "Question " + (score + 0) + " of " + numQuest;
+    document.getElementById("progress").innerText = "Question " + (count + 1) + " of " + numQuest;
+    if(count===4){
+        document.getElementById("progress").innerText = "Question 4 of " + numQuest;
+
+    }
 
     };
 
